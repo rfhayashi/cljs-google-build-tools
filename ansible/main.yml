@@ -1,0 +1,11 @@
+---
+- hosts: build-tools
+  roles:
+    - rfhayashi.openjdk
+    - rfhayashi.lein
+    - rfhayashi.nodejs
+    - rfhayashi.rake
+    - rfhayashi.gcloud
+  tasks:
+    - name: Purge yum cache
+      command: yum clean all
