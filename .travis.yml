@@ -24,3 +24,5 @@ install:
 script:
 
   - COMPOSE_HTTP_TIMEOUT=360 ansible-container build
+
+  - docker tag `basename $(pwd)`-build-tools rfhayashi/cljs-google-build-tools
