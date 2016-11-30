@@ -15,7 +15,6 @@ Vagrant.configure('2') do |config|
   base_ip = config.user.network.base_ip
   subnet = "#{base_ip}.#{config.user.network.subnet_number}"
   config.vm.network 'private_network', ip: "#{subnet}.10"
-  config.vm.network 'forwarded_port', guest: 3449, host: 3449
 
   config.vm.provision 'ansible_local' do |a|
     a.sudo = true
